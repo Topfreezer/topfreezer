@@ -1,0 +1,280 @@
+/* CSS for the navigation bar */
+
+:root {
+  --bg-color: beige;
+  --primary-color: #333;
+  --accent-color-1: rgb(103, 189, 218);
+  --accent-color-2: rgb(18, 104, 154);
+  --text-color: white;
+  --font-family: Arial, sans-serif;
+
+  --nav-radius: 12px;
+  --nav-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  --box-radius: 16px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  --highlight-radius: 8px;
+
+  --padding-box: 20px;
+  --padding-nav: 10px;
+
+  --font-clamp-large: clamp(2.1rem, 10vw, 4rem);
+  --font-clamp-small: clamp(0.8rem, 2vw, 1.3rem);
+  --font-clamp-nav: clamp(1rem, 4vw, 1.1rem);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  background-image: url("../assets/images/background-website.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: var(--font-family);
+  padding-bottom: 500px;
+}
+
+.nav-container {
+  max-width: 980px;
+  background-color: var(--primary-color);
+  border-radius: var(--nav-radius);
+  box-shadow: var(--nav-shadow);
+}
+
+.navbar-container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  font-size: var(--font-clamp-nav);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  align-content: center;
+  text-align: center;  
+  background-color: var(--accent-color-2);
+  transition: width 0.3s ease;
+}
+
+.rounded-box a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+}
+
+.rounded-box a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  align-content: center;
+  text-align: center;  
+  background-color: var(--accent-color-2);
+  transition: width 0.3s ease;
+}
+
+.rounded-box a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.box-container {
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rounded-box {
+  background-color: var(--primary-color);
+  text-align: center;
+  color: var(--text-color);
+  padding: var(--padding-box);
+  border-radius: var(--box-radius);
+  margin-top: 10px;
+  flex: 1 1 200px;
+  box-shadow: var(--box-shadow);
+  backdrop-filter: blur(10px) saturate(200%);
+  -webkit-backdrop-filter: blur(15px) saturate(200%);
+  background-color: rgba(17, 25, 40, 0.64);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(1rem, 4vw, 1.6rem);
+}
+
+.rounded-box img {
+  width: 100%;
+  border-radius: 100%;
+  height: auto;
+  max-width: 200px;
+}
+
+.projects-wrapper {
+  margin-bottom: 1rem;
+}
+.projects-wrapper:after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 3px;
+  background-color: var(--accent-color-2);
+  margin: 0px auto 0;
+  border-radius: 999px;
+  transition: transform 0.3s ease-out;
+}
+
+.projects-wrapper:hover::after {
+  transform: scaleX(1.4);
+}
+
+#background {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.about-me {
+  line-height: 1.4;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: var(--font-clamp-nav);
+}
+
+.text-highlight {
+  font-size: var(--font-clamp-large);
+  color: var(--accent-color-1);
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 8px rgba(79, 209, 197, 0.4);
+}
+
+.text-highlight-2 {
+  font-size: var(--font-clamp-large);
+  color: var(--accent-color-2);
+  text-shadow: 2px 2px 8px rgba(14, 165, 233, 0.4);
+}
+
+.projects {
+  color: var(--accent-color-2);
+}
+
+.box-container.inline {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.skill-bars {
+  margin-top: 20px;
+}
+
+.skill-bar {
+  margin-bottom: 15px;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.bar {
+  background: white;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1pt solid #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.bar div {
+  height: 100%;
+  width: 0;
+  border-radius: 10px;
+  transition: width 2s ease;
+}
+
+.python { 
+  background: #3776ab; 
+  border-color: #333;
+}
+.javascript { 
+  background: #d3b315d2; 
+  border-color: #333;
+}
+
+.html { 
+  background: #e34c26; 
+}
+.css { 
+  background: #264de4; 
+}
+.react { 
+  background: #61dafb;
+}
+
+@media (min-width: 1000px) {
+  .topfreezer-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .topfreezer-wrapper::after {
+    content: "";
+    display: block;
+    width: 80%; /* tweak this for desired length */
+    height: 3px;
+    background-color: var(--accent-color-2);
+    margin: -40px auto 0;
+    border-radius: 999px;
+    transition: transform 0.3s ease-out;
+  }
+  .topfreezer-wrapper:hover::after {
+    transform: scaleX(1.4);
+  }
+}
+
